@@ -376,24 +376,18 @@ button,
   border-radius: 45px;
   box-shadow: 0 5px 0 #191a23;
   overflow: hidden;
-  transition: background-color 0.2s ease;
 }
 
-.process-item.is-open {
+.process-item--open {
   background-color: #b9ff66;
 }
 
 .process-item__header {
-  width: 100%;
-  border: none;
-  border-radius: 0;
-  background: transparent;
   padding: 41px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  text-align: left;
 }
 
 .process-item__left {
@@ -429,12 +423,7 @@ button,
 }
 
 .process-item__body {
-  display: none;
   padding: 0 60px 41px 60px;
-}
-
-.process-item.is-open .process-item__body {
-  display: block;
   border-top: 1px solid #191a23;
   padding-top: 30px;
 }
@@ -539,11 +528,376 @@ button,
   padding: 20px 76px;
 }
 
+/* Testimonials */
+.testimonials-box {
+  background-color: #191a23;
+  color: #ffffff;
+  border-radius: 45px;
+  padding: 84px 60px 68px 60px;
+  overflow: hidden;
+}
+
+.testimonials-row {
+  display: flex;
+  gap: 50px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.testimonials-row::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonial-slide {
+  flex: 0 0 520px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.testimonial-bubble {
+  position: relative;
+  border: 1px solid #b9ff66;
+  border-radius: 45px;
+  padding: 44px 48px;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+.testimonial-bubble::before {
+  content: "";
+  position: absolute;
+  left: 58px;
+  bottom: -17px;
+  width: 32px;
+  height: 32px;
+  background-color: #191a23;
+  border-right: 1px solid #b9ff66;
+  border-bottom: 1px solid #b9ff66;
+  transform: rotate(45deg);
+}
+
+.testimonial-author {
+  padding-left: 58px;
+}
+
+.testimonial-author__name {
+  color: #b9ff66;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.testimonial-author__role {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.testimonials-controls {
+  margin-top: 80px;
+  padding: 0 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.testimonials-nav {
+  color: #ffffff;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.testimonials-dots {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.testimonials-dot {
+  width: 14px;
+  height: 14px;
+  background-color: #ffffff;
+  clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
+}
+
+.testimonials-dot--active {
+  background-color: #b9ff66;
+}
+
+/* Contact Us */
+.contact-card {
+  background-color: #f3f3f3;
+  border-radius: 45px;
+  padding: 60px 100px 80px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  overflow: hidden;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 556px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.contact-radios {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  margin-bottom: 10px;
+}
+
+.radio-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.radio-option input {
+  display: none;
+}
+
+.radio-option__mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #191a23;
+  background-color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radio-option input:checked + .radio-option__mark::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #b9ff66;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field label {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 18px 30px;
+  border-radius: 14px;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #000000;
+}
+
+.form-field textarea {
+  min-height: 170px;
+  resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #898989;
+}
+
+.contact-submit {
+  width: 100%;
+  padding: 20px 35px;
+  font-size: 20px;
+}
+
+.contact-visual {
+  flex-shrink: 0;
+  width: 340px;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.contact-visual img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Footer */
 .footer {
   padding: 55px 60px 50px 60px;
   border-top-left-radius: 45px;
   border-top-right-radius: 45px;
   background: #191a23;
+  color: #ffffff;
+}
+
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 28px;
+}
+
+.footer-logo__img {
+  height: 28px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+}
+
+.footer-nav a {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 24px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-social-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #191a23;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.footer-middle {
+  margin-top: 66px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.footer-contact-badge {
+  background-color: #b9ff66;
+  color: #000000;
+  border-radius: 7px;
+  padding: 2px 8px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.footer-contacts p {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.footer-subscribe {
+  background-color: #292a32;
+  border-radius: 14px;
+  padding: 58px 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  max-width: 634px;
+}
+
+.footer-subscribe input {
+  flex: 1;
+  min-width: 0;
+  padding: 22px 35px;
+  border-radius: 14px;
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+}
+
+.footer-subscribe input::placeholder {
+  color: #ffffff;
+}
+
+.footer-subscribe__btn {
+  background-color: #b9ff66;
+  color: #000000;
+  border-color: #b9ff66;
+  padding: 20px 35px;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.footer-line {
+  margin-top: 50px;
+  height: 1px;
+  background-color: #ffffff;
+  opacity: 0.4;
+}
+
+.footer-bottom {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.footer-bottom p,
+.footer-bottom a {
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.footer-bottom a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 /* Адаптив */
@@ -554,6 +908,26 @@ button,
 
   .header-right-mobile {
     display: block;
+  }
+
+  .testimonials-controls {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .contact-card {
+    padding: 50px;
+  }
+
+  .footer-top,
+  .footer-middle {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-subscribe {
+    width: 100%;
+    max-width: none;
   }
 }
 
@@ -587,6 +961,10 @@ button,
   .case-study-divider {
     width: 100%;
     height: 1px;
+  }
+
+  .contact-visual {
+    display: none;
   }
 }
 
@@ -666,8 +1044,8 @@ button,
     padding: 0 24px 24px 24px;
   }
 
-  .process-item.is-open .process-item__body {
-    padding-top: 20px;
+  .testimonial-slide {
+    flex: 0 0 100%;
   }
 
   .team-card {
@@ -679,5 +1057,47 @@ button,
     width: 100%;
     text-align: center;
     padding: 18px 24px;
+  }
+
+  .testimonials-box {
+    border-radius: 30px;
+    padding: 40px 20px;
+  }
+
+  .testimonials-controls {
+    padding: 0;
+  }
+
+  .testimonial-bubble {
+    padding: 28px 24px;
+    border-radius: 28px;
+  }
+
+  .contact-card {
+    padding: 36px 24px;
+    border-radius: 30px;
+  }
+
+  .footer {
+    padding: 40px 24px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+
+  .footer-nav,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .footer-subscribe {
+    flex-direction: column;
+    padding: 28px 20px;
+  }
+
+  .footer-subscribe input,
+  .footer-subscribe__btn {
+    width: 100%;
   }
 }
